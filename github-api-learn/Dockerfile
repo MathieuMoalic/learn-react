@@ -1,6 +1,6 @@
 FROM node:latest
 
-RUN mkdir /app/src
+RUN mkdir -p /app/src
 
 WORKDIR /app/src
 
