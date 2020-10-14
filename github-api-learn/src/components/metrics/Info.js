@@ -6,16 +6,12 @@ export default function Info(props) {
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">Info</div>
         <div>
-          <strong>Channel Title: </strong>
-          <span className="text-gray-700 text-base">{props.channelTitle}</span>
+          <strong>Followers: </strong>
+          <span className="text-gray-700 text-base">{props.followers}</span>
         </div>
         <div>
-          <strong>Video Title: </strong>
-          <span className="text-gray-700 text-base">{props.title}</span>
-        </div>
-        <div>
-          <strong>Views: </strong>
-          <span className="text-gray-700 text-base">{props.views}</span>
+          <strong>Following: </strong>
+          <span className="text-gray-700 text-base">{props.following}</span>
         </div>
       </div>
     </div>
