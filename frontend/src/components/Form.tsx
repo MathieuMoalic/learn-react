@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 
-export default class Form extends Component {
+interface Props {
+  BodyhandleSubmit: any;
+}
+
+export default class Form extends Component<Props> {
   state = {
-    username: "MathieuMoalic",
+    username: "lol",
   };
-  handleChange = (event) => {
+  handleChange = (event: any) => {
     this.setState({
       username: event.target.value,
     });
   };
-  handleSubmit = (event) => {
+  handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    this.props.handleFormSubmit(this.state.username);
+    this.props.BodyhandleSubmit(this.state.username);
   };
   render() {
     return (
