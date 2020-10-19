@@ -7,7 +7,7 @@ export const api: any = axios.create({
 
 // export default function APIcall({}: Props): ReactElement {
 //   axios.get(`MathieuMoalic`).then((res) => {
-//     const followers = res.data.followers;
+//     const title = res.data.title;
 //   });
 //   return <div></div>;
 // }

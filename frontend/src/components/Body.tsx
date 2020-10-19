@@ -5,21 +5,24 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 interface Props {}
 interface State {
-  followers: number | null;
-  following: number | null;
+  title: string;
+  description: string;
+  completed: boolean | string;
 }
 const api: AxiosInstance = axios.create({
-  baseURL: `https://api.github.com/users/`,
+  baseURL: `http://127.0.0.1:8001/api/testr/`,
 });
 export default class Body extends Component<Props, State> {
   state = {
-    followers: null,
-    following: null,
+    title: "",
+    description: "",
+    completed: "",
   };
-  handleSubmit = async (inputUsername: string) => {
-    await api.get(`${inputUsername}`).then((response: AxiosResponse) => {
-      this.setState({ followers: response.data.followers });
-      this.setState({ following: response.data.following });
+  handleSubmit = async (FormID: string) => {
+    await api.get(`${FormID}`).then((response: AxiosResponse) => {
+      this.setState({ title: response.data.title });
+      this.setState({ description: response.data.description });
+      this.setState({ completed: response.data.completed });
     });
   };
   render() {
@@ -27,8 +30,9 @@ export default class Body extends Component<Props, State> {
       <div className="w-full container mx-auto my-12">
         <Form handleSubmit={this.handleSubmit} />
         <Results
-          followers={this.state.followers}
-          following={this.state.following}
+          title={this.state.title}
+          description={this.state.description}
+          completed={this.state.completed}
         />
       </div>
     );

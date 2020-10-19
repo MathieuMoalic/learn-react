@@ -1,25 +1,34 @@
 import React, { Component } from "react";
-import Info from "./metrics/Info";
+// import Info from "./metrics/Info";
 
 interface Props {
-  followers: number | null;
-  following: number | null;
+  title: string;
+  description: string;
+  completed: boolean | string;
 }
 interface State {}
 
 export default class Results extends Component<Props, State> {
   render() {
     return (
-      <div>
-        <div id="repos">
-          <div className="px-2">
-            <div className="flex -mx-2">
-              {/* <Repos repos={this.props.repos} /> */}
-              <Info
-                followers={this.props.followers}
-                following={this.props.following}
-              />
-            </div>
+      <div className="w-1/2 px-2 rounded overfloww-hidden shadow-lg">
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">Task</div>
+          <div>
+            <strong>title: </strong>
+            <span className="text-gray-700 text-base">{this.props.title}</span>
+          </div>
+          <div>
+            <strong>description: </strong>
+            <span className="text-gray-700 text-base">
+              {this.props.description}
+            </span>
+          </div>
+          <div>
+            <strong>completed: </strong>
+            <span className="text-gray-700 text-base">
+              {this.props.completed.toString()}
+            </span>
           </div>
         </div>
       </div>

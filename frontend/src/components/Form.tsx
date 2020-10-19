@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 
 interface Props {
-  // handleSubmit: Promise<void>;
+  // handleSubmit: Promise<voformID>;
   handleSubmit: any;
 }
 
 export default class Form extends Component<Props> {
   state = {
-    username: "",
+    formID: "",
   };
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({
-      username: event.target.value,
+      formID: event.target.value,
     });
   };
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    this.props.handleSubmit(this.state.username);
+    this.props.handleSubmit(this.state.formID);
   };
   render() {
     return (
@@ -27,8 +27,8 @@ export default class Form extends Component<Props> {
             <input
               className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               type="text"
-              placeholder="Enter the GitHub Name"
-              value={this.state.username}
+              placeholder="Enter the Task id"
+              value={this.state.formID}
               onChange={this.handleChange}
             />
           </div>
