@@ -1,3 +1,4 @@
 {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "python.pythonPath": "/home/mat/.virtualenvs/backend-5yMrqvd-/bin/python"
 }

@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 
 interface Props {
-  followers: any;
-  // following: Promise<number>;
+  followers: number | null;
+  following: number | null;
 }
 interface State {}
 
 export default class Info extends Component<Props, State> {
-  state = {};
-
   render() {
     return (
       <div className="w-1/2 px-2 rounded overfloww-hidden shadow-lg">
@@ -23,7 +21,7 @@ export default class Info extends Component<Props, State> {
           <div>
             <strong>Following: </strong>
             <span className="text-gray-700 text-base">
-              {/* {this.props.following} */}
+              {this.props.following}
             </span>
           </div>
         </div>

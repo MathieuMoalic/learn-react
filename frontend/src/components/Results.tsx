@@ -1,31 +1,13 @@
 import React, { Component } from "react";
 import Info from "./metrics/Info";
-import axios from "axios";
-
-// import APIcall from "../supports/APIcall";
 
 interface Props {
-  username: string;
+  followers: number | null;
+  following: number | null;
 }
-interface State {
-  followers: any;
-  // following: Promise<number>;
-}
-
-const api: any = axios.create({
-  baseURL: `https://api.github.com/users/`,
-});
+interface State {}
 
 export default class Results extends Component<Props, State> {
-  state = {
-    followers: 0,
-  };
-  getFollower = async () => {
-    let data = await api
-      .get(`${this.props.username}`)
-      .then((data: any) => data);
-    this.setState({ followers: data });
-  };
   render() {
     return (
       <div>
@@ -34,8 +16,8 @@ export default class Results extends Component<Props, State> {
             <div className="flex -mx-2">
               {/* <Repos repos={this.props.repos} /> */}
               <Info
-                followers={this.state.followers}
-                // following={this.state.following}
+                followers={this.props.followers}
+                following={this.props.following}
               />
             </div>
           </div>
