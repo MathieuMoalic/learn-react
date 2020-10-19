@@ -5,7 +5,7 @@ interface Props {
 }
 interface State {}
 
-export default class APIAlert extends Component<Props, State> {
+export default class APIalert extends Component<Props, State> {
   state = {};
 
   render() {

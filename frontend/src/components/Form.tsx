@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 interface Props {
   // handleSubmit: Promise<voformID>;
+  setState: any;
   handleSubmit: any;
 }
 
@@ -16,7 +17,7 @@ export default class Form extends Component<Props> {
   };
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    this.props.handleSubmit(this.state.formID);
+    this.props.setState(this.props.handleSubmit(this.state.formID));
   };
   render() {
     return (
