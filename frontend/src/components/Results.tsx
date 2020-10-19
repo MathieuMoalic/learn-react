@@ -11,7 +11,7 @@ interface State {}
 export default class Results extends Component<Props, State> {
   render() {
     return (
-      <div className="w-1/2 px-2 rounded overfloww-hidden shadow-lg">
+      <div className="px-20 rounded overfloww-hidden shadow-lg">
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">Task</div>
           <div>
